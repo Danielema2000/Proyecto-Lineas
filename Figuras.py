@@ -23,11 +23,39 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
+    up()
+    r = end.x - start.x
+    c = 2*3.1416*r
+    l = 360
+    goto(start.x, start.y-r)
+    down()
+    begin_fill()
+
+    
+    for count in range(l):
+        forward(c/l)
+        left(360/l)
+
+    end_fill()
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(4):
+        if(count%2):
+            forward(end.y - start.y)
+            left(90)
+        else:
+            forward(end.x - start.x)
+            left(90)
+
+    end_fill()
+
+
 
 def triangle(start, end):
     "Draw triangle from start to end."
